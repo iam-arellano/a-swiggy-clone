@@ -45,7 +45,7 @@ pipeline {
 
         stage("Sonarqube Analysis "){
              steps{
-                 withSonarQubeEnv('sonarqube_access') {
+                 withSonarQubeEnv('sonar-scanner') {
                      sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=swiggy \
                      -Dsonar.projectKey=swiggy '''
                  }
