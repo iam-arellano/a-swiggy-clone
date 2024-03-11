@@ -31,9 +31,21 @@ pipeline {
                 }
         }
         
-         stage("Sonarqube Analysis "){
+
+    //       stage("SonarQube Analysis"){
+    //        steps {
+	//            script {
+	// 	        withSonarQubeEnv(credentialsId: 'sonarqube_access') { 
+    //                     sh "mvn sonar:sonar"
+	// 	        }
+	//            }	
+    //        }
+    //    }
+
+
+        stage("Sonarqube Analysis "){
              steps{
-                 withSonarQubeEnv('SonarQube-Server') {
+                 withSonarQubeEnv('sonarqube_access') {
                      sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=swiggy \
                      -Dsonar.projectKey=swiggy '''
                  }
