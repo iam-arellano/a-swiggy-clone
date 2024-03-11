@@ -31,16 +31,14 @@ pipeline {
                 }
         }
         
-
-          stage("SonarQube Analysis"){
-           steps {
-	           script {
-		        withSonarQubeEnv(credentialsId: 'sonarqube_access') { 
-                        sh "mvn sonar:sonar"
-		        }
-	           }	
-           }
-       }
+         stage("Sonarqube Analysis "){
+             steps{
+                 withSonarQubeEnv('SonarQube-Server') {
+                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=swiggy \
+                     -Dsonar.projectKey=swiggy '''
+                 }
+             }
+         }
 
        stage("Quality Gate"){
            steps {
