@@ -14,10 +14,8 @@ spec:
       labels:
         app: swiggy-app
     spec:
-      terminationGracePeriodSeconds: 30
       containers:
       - name: swiggy-app
         image: raemondarellano/swiggy:1.0.0-9
-        imagePullPolicy: "Always"
         ports:
         - containerPort: 3000
