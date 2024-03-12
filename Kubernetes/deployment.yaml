@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swiggy:1.0.0-16
+  name: application-swiggy-deployment
   labels:
-    app: swiggy:1.0.0-16
+    app: application-swiggy
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: swiggy:1.0.0-16
+      app: application-swiggy
   template:
     metadata:
       labels:
-        app: swiggy:1.0.0-16
+        app: application-swiggy
     spec:
       containers:
-      - name: swiggy:1.0.0-16
+      - name: application-swiggy
         image: raemondarellano/swiggy:1.0.0-16
         ports:
         - containerPort: 3000
