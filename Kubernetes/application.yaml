@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/iam-arellano/a-swiggy-clone
     targetRevision: HEAD
-    path: .
+    path: Kubernetes
   destination: 
     server: https://kubernetes.default.svc
     namespace: myapp
