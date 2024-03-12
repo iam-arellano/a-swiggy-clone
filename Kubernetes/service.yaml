@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: swiggy-app-service
   labels:
-    app: swiggy-app
+    app:  swiggy-application
 spec:
   type: NodePort
   ports:  
