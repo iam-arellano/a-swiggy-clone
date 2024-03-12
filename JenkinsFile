@@ -96,7 +96,7 @@ pipeline {
             steps {
                 sh """
                    cat Kubernetes/deployment.yaml
-                     sed -i '/${APP_NAME}:${IMAGE_TAG}/g' Kubernetes/deployment.yaml
+                    sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' Kubernetes/deployment.yaml
                    cat Kubernetes/deployment.yaml
                 """
             }
